@@ -20,16 +20,26 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
 
 
+from django.contrib.auth import authenticate
+from rest_framework import serializers
+
 class LoginSerializer(serializers.Serializer):
-    username = serializers.CharField()
-    password = serializers.CharField(write_only=True)
+    email = serializers.EmailField()
+    password = serializers.CharField()
 
     def validate(self, data):
-        user = authenticate(username=data["username"], password=data["password"])
-        if not user:
-            raise serializers.ValidationError("Nom d'utilisateur ou mot de passe incorrect.")
+        email = data.get("email")
+        password = data.get("password")
+
+        user = authenticate(username=email, password=password)
+        # IMPORTANT: username=email pour AbstractUser modifié
+
+        if user is None:
+            raise serializers.ValidationError("Email ou mot de passe incorrect.")
+
         data["user"] = user
         return data
+
 
 
 class UserSerializer(serializers.ModelSerializer):

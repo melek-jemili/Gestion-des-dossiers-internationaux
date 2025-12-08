@@ -8,6 +8,8 @@ class User(AbstractUser):
     prenom=models.CharField(max_length=100)
     email=models.EmailField(unique=True)
     
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["username"]
 
     ROLES = (
         ("admin", "Administrateur"),

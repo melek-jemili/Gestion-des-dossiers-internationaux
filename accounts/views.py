@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
 from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken
-
+from .models import User
 
 from .serializers import (
     RegisterSerializer,
@@ -24,12 +24,12 @@ class RegisterView(APIView):
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():
-            user = serializer.save()
-            refresh = RefreshToken.for_user(user)
+            User = serializer.save()
+            refresh = RefreshToken.for_user(User)
 
             return Response({
                 "message": "Inscription réussie.",
-                "user": UserSerializer(user).data,
+                "user": UserSerializer(User).data,
                 "refresh": str(refresh),
                 "access": str(refresh.access_token),
             }, status=status.HTTP_201_CREATED)
