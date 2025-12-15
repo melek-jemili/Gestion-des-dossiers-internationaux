@@ -82,9 +82,9 @@ export default function Formulaire() {
           <div className="info-content">
             <Info className="info-icon" />
             <div>
-              <h3 className="info-title">Interlocuteurs :</h3>
+              <h3 className="info-title">Conseil:</h3>
               <p className="info-text">
-                Gestion des demandes d'accords internationaux : SME. Maintenez la coordination avec les partenaires afin de garantir un processus sécurisé.
+                Veuillez remplir le fomulaire correctement. Assurez-vous que toutes les informations sont exactes avant de soumettre votre demande.
               </p>
             </div>
           </div>

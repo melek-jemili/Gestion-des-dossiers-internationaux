@@ -7,6 +7,7 @@ import InterfaceCEVU from './CEVU/CEVU';
 import RegisterForm from './register/register';
 import LoginForm from './login/login';
 import TeacherDashboard from './enseignant/dashboard';
+import InterfaceCA from './CA/CA';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route path='/DEVE/DEVE' element ={<DeveValidationInterface />} />
       <Route path='/DRI/DRI' element ={<DRIInterface />} />
       <Route path='/CEVU/CEVU' element ={<InterfaceCEVU />} />
+      <Route path='/CA/CA' element ={<InterfaceCA />} />
       </Routes>
     </Router>
     

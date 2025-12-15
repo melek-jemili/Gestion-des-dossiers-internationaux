@@ -283,6 +283,62 @@
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
+/* Boutons arrondis mauves */
+.submit-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px; /* Complètement arrondi */
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  background-color: #7c3aed; /* Mauve */
+  color: white;
+  box-shadow: 0 1px 3px rgba(124, 58, 237, 0.2);
+}
+
+.submit-btn:hover {
+  background-color: #6d28d9; /* Mauve plus foncé au survol */
+  box-shadow: 0 4px 6px rgba(124, 58, 237, 0.3);
+  transform: translateY(-1px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(124, 58, 237, 0.2);
+}
+
+.submit-btn:disabled {
+  background-color: #c4b5fd;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Variante bouton secondaire (optionnel - si vous voulez différencier les deux boutons) */
+.submit-btn.secondary {
+  background-color: #a78bfa; /* Mauve plus clair */
+}
+
+.submit-btn.secondary:hover {
+  background-color: #8b5cf6;
+}
+
+/* Variante bouton outline mauve (optionnel) */
+.submit-btn.outline {
+  background-color: transparent;
+  border: 2px solid #7c3aed;
+  color: #7c3aed;
+}
+
+.submit-btn.outline:hover {
+  background-color: #7c3aed;
+  color: white;
+}
+
 /* Contact Info */
 .contact-info {
   margin-top: 1.5rem;
